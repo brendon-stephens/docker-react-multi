@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "brendonstephens/multi-client"
+    image: "sunstoneadvisorybrendon/multi-client"
     mem_limit: 128m
     hostname: client
   server:
-    image: "brendonstephens/multi-server"
+    image: "sunstoneadvisorybrendon/multi-server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "brendonstephens/multi-worker"
+    image: "sunstoneadvisorybrendon/multi-worker"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "brendonstephens/multi-nginx"
+    image: "sunstoneadvisorybrendon/multi-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
